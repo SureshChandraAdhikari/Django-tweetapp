@@ -19,10 +19,13 @@ Tweets
                     <h5 class="card-title">{{ tweet.user.username }}</h5>
                     <p class="card-text">{{ tweet.text }}</p>
                 </div>
+                {% if tweet.user == user %}
                 <div class="card-footer d-flex justify-content-between">
                     <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary btn-sm">Edit</a>
                     <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger btn-sm">Delete</a>
                 </div>
+                {% endif %}
+                
             </div>
         </div>
         {% endfor %}
